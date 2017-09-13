@@ -7,8 +7,8 @@ Item {
     BarTextHint {
         x: 65
         y: 234
-        hint_goal: "Buy item:"
-        hint_action: "Scan barcode now"
+        hint_goal: "Koupit položku:"
+        hint_action: "Nyní oscanuj QR kód"
     }
 
     BarcodeInput {
@@ -16,7 +16,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined") {
-                status_text.setStatus("Unknown barcode", "#ff4444")
+                status_text.setStatus("Neznámý QR kód", "#ff4444")
                 return
             }
             loadPageByAcct(acct)
@@ -27,7 +27,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Charge"
+        text: "Nabít"
         onButtonClick: {
             loadPage("ChargeCredit")
         }
@@ -37,7 +37,7 @@ Item {
         x: 450
         y: 838
         width: 360
-        text: "Transfer"
+        text: "Převést"
         onButtonClick: {
             loadPage("Transfer")
         }
@@ -48,7 +48,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Management"
+        text: "Administrace"
         onButtonClick: {
             loadPage("Management")
         }
@@ -58,6 +58,6 @@ Item {
         x: 65
         y: 438
         width: 1150
-        text: "* Mroze a Termixy najdes v lednici *"
+        text: "Pirate Space Brno"
     }
 }
