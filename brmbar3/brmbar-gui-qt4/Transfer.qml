@@ -17,7 +17,7 @@ Item {
 			var acct = shop.barcodeInput(text)
 			text = ""
 			if (typeof(acct) == "undefined") {
-				status_text.setStatus("Unknown barcode", "#ff4444")
+				status_text.setStatus("Neznámý QR kód", "#ff4444")
 				return
 			}
 			if (acct.acctype == "debt") {
@@ -31,7 +31,7 @@ Item {
 			} else if (acct.acctype == "recharge") {
 				amount = acct.amount
 			} else {
-				status_text.setStatus("Unknown barcode", "#ff4444")
+				status_text.setStatus("Neznámý QR kód", "#ff4444")
 			}
 		}
 	}
@@ -51,7 +51,7 @@ Item {
 			height: 60
 			width: 200
 			color: "#ffffff"
-			text: "Money Amount:"
+			text: "Částka"
 			verticalAlignment: Text.AlignVCenter
 			font.pixelSize: 0.768 * 46
 		}
@@ -84,8 +84,8 @@ Item {
 		id: barcode_row
 		x: 65
 		y: parent.userfrom == "" ? 314 : 414
-		hint_goal: (parent.userfrom == "" ? "Take money from:" : parent.userto == "" ? "Give money to:" : parent.amount == "" ? "Specify amount" : "")
-		hint_action: (parent.userfrom == "" || parent.userto == "" ? "Scan barcode now" : (parent.amount ? "" : "(or scan barcode now)"))
+		hint_goal: (parent.userfrom == "" ? "Od koho:" : parent.userto == "" ? "Komu:" : parent.amount == "" ? "Částka" : "")
+		hint_action: (parent.userfrom == "" || parent.userto == "" ? "Nyní oscanuj QR kód" : (parent.amount ? "" : "(Nyní oscanuj QR kód)"))
 	}
 
 	Text {
