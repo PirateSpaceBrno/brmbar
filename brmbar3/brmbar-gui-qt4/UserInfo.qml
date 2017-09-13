@@ -56,7 +56,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Charge"
+        text: "Nabít kredit"
         fontSize: 0.768 * 60
         onButtonClick: {
             loadPage("ChargeCredit", { "username": name, "userdbid": dbid })
@@ -68,7 +68,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Main Screen"
+        text: "Zpět na hlavní obrazovku"
         onButtonClick: {
             loadPage("MainPage")
         }
