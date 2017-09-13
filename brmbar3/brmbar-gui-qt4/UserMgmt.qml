@@ -61,7 +61,7 @@ Item {
 		    x: 856
 		    width: 240
 		    height: 68
-		    text: "Vybrat prostředky"
+		    text: "Vybrat kredit"
 		    fontSize: 0.768 * 46
 		    onButtonClick: {
 			loadPage("Withdraw", { username: modelData.name, userdbid: modelData.id })
