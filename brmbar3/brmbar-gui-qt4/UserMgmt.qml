@@ -61,7 +61,7 @@ Item {
 		    x: 856
 		    width: 240
 		    height: 68
-		    text: "Withdraw"
+		    text: "Vybrat prostředky"
 		    fontSize: 0.768 * 46
 		    onButtonClick: {
 			loadPage("Withdraw", { username: modelData.name, userdbid: modelData.id })
@@ -84,7 +84,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Add User"
+        text: "Trolící čudlík :)"
         fontSize: 0.768 * 60
 	btnColor: "#666666"
     }
@@ -94,7 +94,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Main Screen"
+        text: "Hlavní obrazovka"
         onButtonClick: {
 	    loadPage("MainPage")
 	}
