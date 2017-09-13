@@ -68,7 +68,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Zpět na hlavní obrazovku"
+        text: "Hlavní obrazovka"
         onButtonClick: {
             loadPage("MainPage")
         }
