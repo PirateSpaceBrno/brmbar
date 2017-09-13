@@ -48,7 +48,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Administrace"
+        text: "Správa"
         onButtonClick: {
             loadPage("Management")
         }
