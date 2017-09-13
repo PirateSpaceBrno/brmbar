@@ -15,7 +15,7 @@ Item {
         width: 537
         height: 80
         color: "#ffffff"
-        text: parent.username ? parent.username : "Credit withdrawal"
+        text: parent.username ? parent.username : "Výběr kreditu"
         wrapMode: Text.WordWrap
         horizontalAlignment: Text.AlignRight
         verticalAlignment: Text.AlignVCenter
@@ -38,8 +38,8 @@ Item {
     BarTextHint {
         x: 65
         y: 686
-        hint_goal: (parent.username ? "" : parent.amount ? "Withdraw:" : "Withdraw amount?")
-        hint_action: (parent.username ? (parent.amount ? "" : "(or scan barcode now)") : "Scan barcode now")
+        hint_goal: (parent.username ? "" : parent.amount ? "Vybrat:" : "Jakou částku?")
+        hint_action: (parent.username ? (parent.amount ? "" : "(or scan barcode now)") : "Nyní oscanuj QR kód")
     }
 
     BarNumPad {
@@ -79,7 +79,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Withdraw"
+        text: "Vybrat"
         fontSize: 0.768 * 60
         visible: parent.amount && parent.userdbid
         onButtonClick: {
@@ -92,7 +92,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Cancel"
+        text: "Zrušit výběr"
         onButtonClick: {
             status_text.setStatus("Withdrawal cancelled", "#ff4444")
             loadPage("UserMgmt") /* TODO better "back" navigation? */
