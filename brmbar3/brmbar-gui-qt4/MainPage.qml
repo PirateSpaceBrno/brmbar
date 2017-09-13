@@ -27,7 +27,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Nabít"
+        text: "Nabít bony"
         onButtonClick: {
             loadPage("ChargeCredit")
         }
@@ -37,7 +37,7 @@ Item {
         x: 450
         y: 838
         width: 360
-        text: "Převést"
+        text: "Převést bony"
         onButtonClick: {
             loadPage("Transfer")
         }
