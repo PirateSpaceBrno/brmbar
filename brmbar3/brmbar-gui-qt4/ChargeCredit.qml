@@ -38,8 +38,8 @@ Item {
     BarTextHint {
         x: 65
         y: 430
-        hint_goal: (parent.username ? "" : parent.amount ? "Charge user:" : "Charge credit:")
-        hint_action: (parent.username ? "" : "Scan barcode now")
+        hint_goal: (parent.username ? "" : parent.amount ? "Nabít účet:" : "Nabít kredit:")
+        hint_action: (parent.username ? "" : "Nyní oscanuj QR kód")
     }
 
     BarNumPad {
@@ -59,7 +59,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined" || (parent.username && acct.acctype != "recharge") || (parent.amount && acct.acctype != "debt")) {
-                status_text.setStatus("Unknown barcode", "#ff4444")
+                status_text.setStatus("Neznámý QR kód", "#ff4444")
                 return
             }
             if (acct.acctype === "debt") {
@@ -79,7 +79,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Charge"
+        text: "Nabít"
         fontSize: 0.768 * 60
         visible: parent.amount && parent.userdbid
         onButtonClick: {
@@ -92,16 +92,16 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Cancel"
+        text: "Zrušit"
         onButtonClick: {
-            status_text.setStatus("Charging cancelled", "#ff4444")
+            status_text.setStatus("Nabíjení kreditu zrušeno", "#ff4444")
             loadPage("MainPage")
         }
     }
 
     function chargeCredit() {
         var balance = shop.chargeCredit(amount, userdbid)
-        status_text.setStatus("Charged! "+username+"'s credit is "+balance+".", "#ffff7c")
+        status_text.setStatus("NABITO! Nový zůstatek na účtu "+username+" je "+balance+".", "#ffff7c")
         loadPage("MainPage")
     }
 }
