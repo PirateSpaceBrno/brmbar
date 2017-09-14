@@ -12,7 +12,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined") {
-                status_text.setStatus("Unknown barcode", "#ff4444")
+                status_text.setStatus("Neznámý kód", "#ff4444")
                 return
             }
             if (acct.acctype !== "debt") {
