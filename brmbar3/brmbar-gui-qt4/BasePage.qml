@@ -30,7 +30,7 @@ Rectangle {
         height: 65
         smooth: true
         fillMode: Image.PreserveAspectFit
-        source: "brmlab.svg"
+        source: "brmbar.svg"
     }
 
     property alias status_text: status_text_id
