@@ -14,7 +14,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined") {
-                status_text.setStatus("Unknown barcode", "#ff4444")
+                status_text.setStatus("Neznámý QR kód", "#ff4444")
                 return
             }
             if (acct.acctype != "inventory") {
@@ -62,7 +62,7 @@ Item {
 		    x: 856
 		    width: 240
 		    height: 68
-		    text: "Edit"
+		    text: "Upravit"
 		    fontSize: 0.768 * 46
 		    onButtonClick: {
 			loadPage("ItemEdit", { dbid: modelData.id })
@@ -86,7 +86,7 @@ Item {
         y: 838
         width: 281
         height: 83
-        text: "New Item"
+        text: "Nová položka"
         fontSize: 0.768 * 60
         visible: page.state == "normal"
         onButtonClick: {
@@ -99,7 +99,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Main Screen"
+        text: "Hlavní obrazovka"
         onButtonClick: {
             if (page.state == "search")
                 page.state = "normal"
@@ -112,7 +112,7 @@ Item {
         id: search_button
         x: 353
         y: 838
-        text: "Search"
+        text: "Hledat"
         visible: page.state == "normal"
         onButtonClick: { page.state = "search" }
     }
@@ -139,7 +139,7 @@ Item {
         id: query_button
         x: 353
         y: 838
-        text: "Search"
+        text: "Vyhledat"
         visible: page.state == "search"
         onButtonClick: {
             page.item_list_model = shop.itemList(search_pad.enteredText)
@@ -171,7 +171,7 @@ Item {
 
             PropertyChanges {
                 target: cancel
-                text: "Back"
+                text: "Zpět"
             }
 
             PropertyChanges {
