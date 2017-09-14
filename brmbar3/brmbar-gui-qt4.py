@@ -230,5 +230,6 @@ ctx.setContextProperty('shop', ShopAdapter())
 
 view.setSource('brmbar-gui-qt4/main.qml')
 
-view.showFullScreen()
+#view.showFullScreen()
+view.show()
 app.exec_()
