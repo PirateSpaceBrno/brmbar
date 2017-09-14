@@ -22,16 +22,16 @@ Item {
 	    barcode = text
 	    text = ""
 	    if (typeof(acct) != "undefined") {
-		status_text.setStatus("Existing barcode: " + acct.name, "#ff4444")
+		status_text.setStatus("Existující QR kód: " + acct.name, "#ff4444")
 		/* TODO: Allow override. */
 		return
 	    }
         if (info.dbid === "") {
-		status_text.setStatus("Press [Create] first", "#ff4444")
+		status_text.setStatus("Nejdříve zmáčkni [Vytvořit]", "#ff4444")
 		return
 	    }
 	    shop.addBarcode(dbid, barcode)
-	    status_text.setStatus("Barcode added.", "#ffff7c")
+	    status_text.setStatus("QR kód přidán", "#ffff7c")
         }
     }
 
@@ -63,7 +63,7 @@ Item {
 	    width: 240
 	    height: 60
 	    fontSize: 0.768 * 46
-	    text: page.state == "name_edit" ? "Assign" : "Edit"
+	    text: page.state == "name_edit" ? "Přiřadit" : "Upravit"
 	    onButtonClick: { if (page.state == "name_edit") page.state = "normal"; else page.state = "name_edit"; }
 	}
     }
@@ -93,7 +93,7 @@ Item {
 	    height: 60
 	    width: 200
 	    color: "#ffffff"
-	    text: "Buy price:"
+	    text: "Nákupní cena:"
 	    verticalAlignment: Text.AlignVCenter
 	    font.pixelSize: 0.768 * 46
 	}
@@ -118,7 +118,7 @@ Item {
 	    width: 240
 	    height: 60
 	    fontSize: 0.768 * 46
-	    text: page.state == "buyprice_edit" ? "Assign" : "Edit"
+	    text: page.state == "buyprice_edit" ? "Přiřadit" : "Upravit"
 	    onButtonClick: { if (page.state == "buyprice_edit") page.state = "normal"; else page.state = "buyprice_edit"; }
 	}
     }
@@ -148,7 +148,7 @@ Item {
 	    height: 60
 	    width: 200
 	    color: "#ffffff"
-	    text: "Sell price:"
+	    text: "Prodejní cena:"
 	    verticalAlignment: Text.AlignVCenter
 	    font.pixelSize: 0.768 * 46
 	}
@@ -173,7 +173,7 @@ Item {
 	    width: 240
 	    height: 60
 	    fontSize: 0.768 * 46
-	    text: page.state == "sellprice_edit" ? "Assign" : "Edit"
+	    text: page.state == "sellprice_edit" ? "Přiřadit" : "Upravit"
 	    onButtonClick: { if (page.state == "sellprice_edit") page.state = "normal"; else page.state = "sellprice_edit"; }
 	}
     }
@@ -203,7 +203,7 @@ Item {
 	    height: 60
 	    width: 200
 	    color: "#ffffff"
-	    text: "Quantity:"
+	    text: "V zásobě:"
 	    verticalAlignment: Text.AlignVCenter
 	    font.pixelSize: 0.768 * 46
 	}
@@ -228,7 +228,7 @@ Item {
 	    width: 240
 	    height: 60
 	    fontSize: 0.768 * 46
-	    text: page.state == "balance_edit" ? "Add qty" : "Restock"
+	    text: page.state == "balance_edit" ? "Zvýšit zásobu" : "Naskladnit"
 	    onButtonClick: {
 		if (page.state == "balance_edit") {
 		    var xi = info; xi.balance = parseInt(xi.balance) + parseInt(balance_addqty_edit.enteredText); info = xi;
@@ -263,7 +263,7 @@ Item {
 	    height: 60
 	    width: 300
 	    color: "#ffffff"
-	    text: "Add quantity:"
+	    text: "Zvýšit zásobu:"
 	    verticalAlignment: Text.AlignVCenter
 	    font.pixelSize: 0.768 * 46
 	}
@@ -287,7 +287,7 @@ Item {
 	    height: 320
 	    width: 248
 	    color: "#71cccc"
-	    text: "Please specify the precise amount of newly\nstocked goods, even if the current quantity\nvalue does not match reality (you can let us\nknow about that at brmbar@brmlab.cz)"
+	    text: "Prosím, nastav přesný počet nově\nnaskladněných zásob, i když aktuální počet\nnesouhlasí realitě (můžeš nám\no tom dát vědět)."
 	    font.pixelSize: 0.768 * 27
 	}
     }
@@ -297,8 +297,8 @@ Item {
 	visible: page.state == "normal"
         x: 65
         y: 476
-        hint_goal: "Add barcode:"
-        hint_action: "Scan item now"
+        hint_goal: "Přidat QR kód:"
+        hint_action: "Nyní oscanuj QR kód"
     }
 
     BarButton {
@@ -306,7 +306,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: dbid == "" ? "Create" : "Save"
+        text: dbid == "" ? "Vytvořit" : "Uložit"
         onButtonClick: {
             var xi = info;
             xi["name"] = page.item_name;
@@ -318,7 +318,7 @@ Item {
             if (dbid == "") {
                 res = shop.newItem(info)
                 if (!res) {
-                   status_text.setStatus("Please fill all values first.", "#ff4444")
+                   status_text.setStatus("Nejdřív prosím vyplň všechny hodnoty.", "#ff4444")
                    return
                 }
             } else {
@@ -326,9 +326,9 @@ Item {
             }
 
             if (res.cost) {
-                status_text.setStatus((dbid == "" ? "Stocked!" : "Restocked!") + " Take " + res.cost + " from the money box.", "#ffff7c")
+                status_text.setStatus((dbid == "" ? "Naskladněno!" : "Znovu naskladněno!") + " Vem si " + res.cost + " z pokladničky.", "#ffff7c")
             } else {
-                status_text.setStatus(dbid == "" ? "Item created" : "Changes saved", "#ffff7c")
+                status_text.setStatus(dbid == "" ? "Položka vytvořena" : "Změny uloženy", "#ffff7c")
             }
 
             if (dbid == "") {
@@ -345,9 +345,9 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Cancel"
+        text: "Zrušit"
         onButtonClick: {
-            status_text.setStatus("Edit cancelled", "#ff4444")
+            status_text.setStatus("Editace zrušena", "#ff4444")
             loadPage("StockMgmt")
         }
     }
