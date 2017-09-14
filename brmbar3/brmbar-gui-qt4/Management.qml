@@ -42,7 +42,7 @@ Item {
         width: 337
         height: 160
         color: "#ffffff"
-        text: "Cash:"
+        text: "Hotovost:"
         wrapMode: Text.WordWrap
         verticalAlignment: Text.AlignVCenter
         font.pixelSize: 0.768 * 46
@@ -68,7 +68,7 @@ Item {
         width: 337
         height: 160
         color: "#ffffff"
-        text: "Credit:"
+        text: "Kredit:"
         wrapMode: Text.WordWrap
         verticalAlignment: Text.AlignVCenter
         font.pixelSize: 0.768 * 46
@@ -94,7 +94,7 @@ Item {
         width: 337
         height: 160
         color: "#ffffff"
-        text: "Stock:"
+        text: "V zásobě:"
         wrapMode: Text.WordWrap
         verticalAlignment: Text.AlignVCenter
         font.pixelSize: 0.768 * 46
@@ -118,7 +118,7 @@ Item {
         x: 65
         y: 686
         width: 360
-        text: "Stock Mgmt"
+        text: "Správa zásob"
         onButtonClick: {
             loadPage("StockMgmt")
         }
@@ -129,7 +129,7 @@ Item {
         x: 855
         y: 686
         width: 360
-        text: "User Mgmt"
+        text: "Správa účtů"
         onButtonClick: {
             loadPage("UserMgmt")
         }
@@ -140,7 +140,7 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Receipt"
+        text: "Účtenky"
         onButtonClick: {
             loadPage("Receipt")
         }
@@ -151,7 +151,7 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Main Screen"
+        text: "Hlavní obrazovka"
         onButtonClick: {
             loadPage("MainPage")
         }
