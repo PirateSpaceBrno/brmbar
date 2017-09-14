@@ -80,16 +80,6 @@ Item {
     }
 
     BarButton {
-        id: add_user
-        x: 65
-        y: 838
-        width: 360
-        text: "Trolící čudlík :)"
-        fontSize: 0.768 * 60
-	btnColor: "#666666"
-    }
-
-    BarButton {
         id: cancel
         x: 855
         y: 838
