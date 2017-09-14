@@ -39,7 +39,7 @@ Item {
         x: 65
         y: 686
         hint_goal: (parent.username ? "" : parent.amount ? "Vybrat:" : "Jakou částku?")
-        hint_action: (parent.username ? (parent.amount ? "" : "(or scan barcode now)") : "Nyní oscanuj QR kód")
+        hint_action: (parent.username ? (parent.amount ? "" : "(or scan barcode now)") : "Přilož NFC tag")
     }
 
     BarNumPad {

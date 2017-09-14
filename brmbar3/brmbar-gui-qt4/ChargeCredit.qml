@@ -39,7 +39,7 @@ Item {
         x: 65
         y: 430
         hint_goal: (parent.username ? "" : parent.amount ? "Nabít účet:" : "Nabít kredit:")
-        hint_action: (parent.username ? "" : "Nyní oscanuj QR kód")
+        hint_action: (parent.username ? "" : "Přilož NFC tag")
     }
 
     BarNumPad {
@@ -59,7 +59,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined" || (parent.username && acct.acctype != "recharge") || (parent.amount && acct.acctype != "debt")) {
-                status_text.setStatus("Neznámý QR kód", "#ff4444")
+                status_text.setStatus("Neznámý NFC tag", "#ff4444")
                 return
             }
             if (acct.acctype === "debt") {

@@ -22,7 +22,7 @@ Item {
 	    barcode = text
 	    text = ""
 	    if (typeof(acct) != "undefined") {
-		status_text.setStatus("Existující QR kód: " + acct.name, "#ff4444")
+		status_text.setStatus("Existující NFC tag: " + acct.name, "#ff4444")
 		/* TODO: Allow override. */
 		return
 	    }
@@ -31,7 +31,7 @@ Item {
 		return
 	    }
 	    shop.addBarcode(dbid, barcode)
-	    status_text.setStatus("QR kód přidán", "#ffff7c")
+	    status_text.setStatus("NFC tag přidán", "#ffff7c")
         }
     }
 
@@ -297,8 +297,8 @@ Item {
 	visible: page.state == "normal"
         x: 65
         y: 476
-        hint_goal: "Přidat QR kód:"
-        hint_action: "Nyní oscanuj QR kód"
+        hint_goal: "Přidat NFC tag:"
+        hint_action: "Přilož NFC tag"
     }
 
     BarButton {

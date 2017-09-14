@@ -17,7 +17,7 @@ Item {
 			var acct = shop.barcodeInput(text)
 			text = ""
 			if (typeof(acct) == "undefined") {
-				status_text.setStatus("Neznámý QR kód", "#ff4444")
+				status_text.setStatus("Neznámý NFC tag", "#ff4444")
 				return
 			}
 			if (acct.acctype == "debt") {
@@ -31,7 +31,7 @@ Item {
 			} else if (acct.acctype == "recharge") {
 				amount = acct.amount
 			} else {
-				status_text.setStatus("Neznámý QR kód", "#ff4444")
+				status_text.setStatus("Neznámý NFC tag", "#ff4444")
 			}
 		}
 	}
@@ -85,7 +85,7 @@ Item {
 		x: 65
 		y: parent.userfrom == "" ? 314 : 414
 		hint_goal: (parent.userfrom == "" ? "Od koho:" : parent.userto == "" ? "Komu:" : parent.amount == "" ? "Částka" : "")
-		hint_action: (parent.userfrom == "" || parent.userto == "" ? "Nyní oscanuj QR kód" : (parent.amount ? "" : "(Nyní oscanuj QR kód)"))
+		hint_action: (parent.userfrom == "" || parent.userto == "" ? "Přilož NFC tag" : (parent.amount ? "" : "(Přilož NFC tag)"))
 	}
 
 	Text {

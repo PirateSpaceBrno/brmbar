@@ -8,7 +8,7 @@ Item {
         x: 65
         y: 234
         hint_goal: "Koupit položku:"
-        hint_action: "Nyní oscanuj QR kód"
+        hint_action: "Přilož NFC tag"
     }
 
     BarcodeInput {
@@ -16,7 +16,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined") {
-                status_text.setStatus("Neznámý QR kód", "#ff4444")
+                status_text.setStatus("Neznámý NFC tag", "#ff4444")
                 return
             }
             loadPageByAcct(acct)
