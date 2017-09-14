@@ -10,7 +10,7 @@ Rectangle {
         y: 35
 	height: 65
         color: "#217777"
-        text: "brmbar v3"
+        text: "brmbar-pirate v3"
 	verticalAlignment: Text.AlignVCenter
         font.pixelSize: 0.768 * 49
     }
