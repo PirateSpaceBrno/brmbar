@@ -37,8 +37,8 @@ Item {
     BarTextHint {
         x: 65
         y: 430
-        hint_goal: "Buy on credit:"
-        hint_action: "Scan barcode now"
+        hint_goal: "Koupit za kredit:"
+        hint_action: "Nyní oscanuj QR kód"
     }
 
     BarcodeInput {
@@ -47,7 +47,7 @@ Item {
             var acct = shop.barcodeInput(text)
             text = ""
             if (typeof(acct) == "undefined") {
-                status_text.setStatus("Unknown barcode", "#ff4444")
+                status_text.setStatus("Neznámý QR kód", "#ff4444")
                 return
             }
             if (acct.acctype !== "debt" && acct.acctype !== "cash") {
@@ -57,12 +57,12 @@ Item {
             
             if (acct.acctype == "cash") { //Copied from BarButton.onButtonClick
                 shop.sellItemCash(dbid)
-                status_text.setStatus("Sold! Put " + price + " Kč in the money box.", "#ffff7c")
+                status_text.setStatus("Prodáno! Vhoď " + price + " do pokladničky", "#ffff7c")
             } else if (!shop.canSellItem(dbid, acct.id)) {
-                status_text.setStatus("NOT SOLD! "+acct.name+"'s credit is TOO LOW: "+shop.balance_user(acct.id), "#ff4444")
+                status_text.setStatus("NEZAÚČTOVÁNO! Kredit na účtu "+acct.name+" je příliš nízký: "+shop.balance_user(acct.id), "#ff4444")
             } else {
                 var balance = shop.sellItem(dbid, acct.id)
-                status_text.setStatus("Sold! "+acct.name+"'s credit is "+balance+".", "#ffff7c")
+                status_text.setStatus("ZAÚČTOVÁNO! Zůstatek na účtu "+acct.name+" je "+balance+".", "#ffff7c")
             }
             loadPage("MainPage")
         }
@@ -73,11 +73,11 @@ Item {
         x: 65
         y: 838
         width: 360
-        text: "Pay by cash"
+        text: "Zaplatit hotově"
         fontSize: 0.768 * 60
         onButtonClick: {
             shop.sellItemCash(dbid)
-            status_text.setStatus("Sold! Put " + price + " Kč in the money box.", "#ffff7c")
+            status_text.setStatus("Prodáno! Vhoď " + price + " do pokladničky", "#ffff7c")
             loadPage("MainPage")
         }
     }
@@ -87,9 +87,9 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Cancel"
+        text: "Zrušit"
         onButtonClick: {
-            status_text.setStatus("Transaction cancelled", "#ff4444")
+            status_text.setStatus("Transakce zrušena", "#ff4444")
             loadPage("MainPage")
         }
     }
