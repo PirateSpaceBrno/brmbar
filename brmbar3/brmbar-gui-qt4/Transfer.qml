@@ -96,7 +96,7 @@ Item {
 		height: 154
 		width: 894
 		color: "#71cccc"
-		text: "This is for transfering credit between two brmbar users.\n May be used instead of *check next club-mate to me*."
+		text: "Zde můžeš převést kredit mezi dvěma uživateli brmbaru.\n Může být použito namísto *příští je na mě*."
 		wrapMode: Text.WordWrap
 		horizontalAlignment: Text.AlignHCenter
 		font.pixelSize: 0.768 * 27
@@ -109,7 +109,7 @@ Item {
 	    width: 537
 	    height: 80
 	    color: "#ffffff"
-	    text: parent.userfrom ? parent.userfrom + " →" : "Money Transfer"
+	    text: parent.userfrom ? parent.userfrom + " →" : "Převod peněz"
 	    wrapMode: Text.WordWrap
 	    horizontalAlignment: Text.AlignRight
 	    verticalAlignment: Text.AlignVCenter
@@ -138,24 +138,24 @@ Item {
 		text: "Transfer"
 		onButtonClick: {
 			if (userfrom == "") {
-				status_text.setStatus("Select FROM account.", "#ff4444")
+				status_text.setStatus("Vyber od koho převést.", "#ff4444")
 				return
 			}
 			if (userto == "") {
-				status_text.setStatus("Select TO account.", "#ff4444")
+				status_text.setStatus("Vyber komu převést.", "#ff4444")
 				return
 			}
 			if (amount == "") {
-				status_text.setStatus("Enter amount.", "#ff4444")
+				status_text.setStatus("Zadej částku.", "#ff4444")
 				return
 			}
 			var amount_str = shop.newTransfer(uidfrom, uidto, amount)
 			if (typeof(amount_str) == "undefined") {
-				status_text.setStatus("Transfer error.", "#ff4444")
+				status_text.setStatus("Chyba převodu.", "#ff4444")
 				return
 			}
 
-			status_text.setStatus("Transferred " + amount_str + " from " + userfrom + " to " + userto, "#ffff7c")
+			status_text.setStatus("Převedeno " + amount_str + " z účtu " + userfrom + " na účet " + userto, "#ffff7c")
 			loadPage("MainPage")
 		}
 	}
@@ -165,9 +165,9 @@ Item {
 		x: 855
 		y: 838
 		width: 360
-		text: "Cancel"
+		text: "Zrušit"
 		onButtonClick: {
-			status_text.setStatus("Transfer cancelled", "#ff4444")
+			status_text.setStatus("Převod zrušen", "#ff4444")
 			loadPage("MainPage")
 		}
 	}
