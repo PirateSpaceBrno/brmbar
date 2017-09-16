@@ -96,7 +96,7 @@ Item {
 		height: 154
 		width: 894
 		color: "#71cccc"
-		text: "Zde můžeš převést kredit mezi dvěma uživateli brmbaru.\n Může být použito namísto *příští je na mě*."
+		text: "Zde můžeš převést kredit mezi dvěma uživateli brmbaru."
 		wrapMode: Text.WordWrap
 		horizontalAlignment: Text.AlignHCenter
 		font.pixelSize: 0.768 * 27
