@@ -28,48 +28,48 @@ Item {
         }
     }
 
-Item {
-	id: name_row
-	visible: page.state == "normal" || page.state == "name_edit"
-        x: 65
-        y: 166
-        width: 774
-        height: 60
+	Item {
+		id: name_row
+		visible: page.state == "normal" || page.state == "name_edit"
+			x: 65
+			y: 166
+			width: 774
+			height: 60
 
-	Text {
-	    id: item_name_text
-	    x: 0
-	    y: 0
-	    width: 534
-	    height: 60
-	    color: "#ffff7c"
-	    text: page.item_name
-	    wrapMode: Text.WordWrap
-	    verticalAlignment: Text.AlignVCenter
-	    font.pixelSize: 0.768 * 46
+		Text {
+			id: item_name_text
+			x: 0
+			y: 0
+			width: 534
+			height: 60
+			color: "#ffff7c"
+			text: page.item_name
+			wrapMode: Text.WordWrap
+			verticalAlignment: Text.AlignVCenter
+			font.pixelSize: 0.768 * 46
+		}
+
+		BarButton {
+			id: item_name_edit
+			x: 790
+			y: 0
+			width: 240
+			height: 60
+			fontSize: 0.768 * 46
+			text: page.state == "name_edit" ? "Přiřadit" : "Upravit"
+			onButtonClick: { if (page.state == "name_edit") page.state = "normal"; else page.state = "name_edit"; }
+		}
 	}
 
-	BarButton {
-	    id: item_name_edit
-	    x: 790
-	    y: 0
-	    width: 240
-	    height: 60
-	    fontSize: 0.768 * 46
-	    text: page.state == "name_edit" ? "Přiřadit" : "Upravit"
-	    onButtonClick: { if (page.state == "name_edit") page.state = "normal"; else page.state = "name_edit"; }
+	BarKeyPad {
+			id: item_name_pad
+			x: 65
+			y: 239
+			visible: page.state == "name_edit"
+			focus: page.state == "name_edit"
+			Keys.onReturnPressed: { item_name_edit.buttonClick() }
+			Keys.onEscapePressed: { cancel.buttonClick() }
 	}
-    }
-
-    BarKeyPad {
-        id: item_name_pad
-        x: 65
-        y: 239
-        visible: page.state == "name_edit"
-        focus: page.state == "name_edit"
-	Keys.onReturnPressed: { item_name_edit.buttonClick() }
-	Keys.onEscapePressed: { cancel.buttonClick() }
-}
 
 
 	BarButton {
