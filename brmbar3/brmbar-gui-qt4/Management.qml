@@ -6,7 +6,6 @@ Item {
 
     property variant cash: shop.balance_cash()
     property variant profit: shop.balance_profit()
-    property variant inv_money: shop.balance_inventory()
     property variant credit_money: shop.balance_credit()
 
     Text {
@@ -82,32 +81,6 @@ Item {
         width: 254
         color: "#ffff7c"
         text: parent.credit_money
-        verticalAlignment: Text.AlignVCenter
-        horizontalAlignment: Text.AlignRight
-        font.pixelSize: 0.768 * 46
-    }
-
-    Text {
-        id: inv_name
-        x: 791
-        y: 266
-        width: 337
-        height: 160
-        color: "#ffffff"
-        text: "V zásobě:"
-        wrapMode: Text.WordWrap
-        verticalAlignment: Text.AlignVCenter
-        font.pixelSize: 0.768 * 46
-    }
-
-    Text {
-        id: inv_amount
-        x: 961
-        y: 266
-        height: 160
-        width: 254
-        color: "#ffff7c"
-        text: parent.inv_money
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignRight
         font.pixelSize: 0.768 * 46
