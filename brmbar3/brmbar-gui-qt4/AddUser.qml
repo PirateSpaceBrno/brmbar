@@ -16,15 +16,15 @@ Item {
 			barcode = text
             text = ""
 			if (typeof(acct) != "undefined") {
-				status_text.setStatus("Existující NFC tag: " + acct.name, "#ff4444")
+				status_text.setStatus("ExistujÃ­cÃ­ NFC tag: " + acct.name, "#ff4444")
                 return
             }
 			if (info.dbid === "") {
-				status_text.setStatus("Nejdøíve zmáèkni [Vytvoøit]", "#ff4444")
+				status_text.setStatus("NejdÅ™Ã­ve zmÃ¡Äkni [VytvoÅ™it]", "#ff4444")
 				return
 			}
 			shop.addBarcode(dbid, barcode)
-			status_text.setStatus("NFC tag pøidán", "#ffff7c")
+			status_text.setStatus("NFC tag pÅ™idÃ¡n", "#ffff7c")
         }
     }
 
@@ -56,7 +56,7 @@ Item {
 	    width: 240
 	    height: 60
 	    fontSize: 0.768 * 46
-	    text: page.state == "name_edit" ? "Pøiøadit" : "Upravit"
+	    text: page.state == "name_edit" ? "PÅ™iÅ™adit" : "Upravit"
 	    onButtonClick: { if (page.state == "name_edit") page.state = "normal"; else page.state = "name_edit"; }
 	}
     }
@@ -77,7 +77,7 @@ Item {
 		x: 65
 		y: 838
 		width: 360
-		text: "Vytvoøit"
+		text: "VytvoÅ™it"
 		onButtonClick: {
 	        var xi = info;
 	        xi["name"] = page.item_name;
@@ -87,7 +87,7 @@ Item {
 			if (dbid == "") {
                 res = shop.addUser(info)
                 if (!res) {
-                   status_text.setStatus("Nejdøív prosím vyplò jméno.", "#ff4444")
+                   status_text.setStatus("NejdÅ™Ã­v prosÃ­m vyplÅˆ jmÃ©no.", "#ff4444")
                    return
                 }
             }
@@ -107,9 +107,9 @@ Item {
         x: 855
         y: 838
         width: 360
-        text: "Hlavní obrazovka"
+        text: "HlavnÃ­ obrazovka"
         onButtonClick: {
-            status_text.setStatus("Vytváøení uivatele zrušeno", "#ff4444")
+            status_text.setStatus("VytvÃ¡Å™enÃ­ uÅ¾ivatele zruÅ¡eno", "#ff4444")
             loadPage("MainPage")
         }
 	}
