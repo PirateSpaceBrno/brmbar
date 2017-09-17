@@ -77,4 +77,4 @@ class Account:
 
     def change_barcode(self, barcode):
         self.db.execute("UPDATE barcodes SET barcode = %s WHERE account = %s", [barcode, self.id])
-        self.dv.commit()
+        self.db.commit()
