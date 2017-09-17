@@ -32,8 +32,8 @@ Usage: brmbar-cli.py COMMAND ARGS...
 		screen of the GUI.
 	adduser USER
 		Add user (debt) account with given username.
-    edituser USER barcode NEWBARCODE
-        Edit user's barcode to newly specified
+	edituser USER barcode NEWBARCODE
+		Edit user's barcode to newly specified
 	undo TRANSID
 		Commit a transaction that reverses all splits of a transaction with
 		a given id (to find out that id: select * from transaction_cashsums;)
