@@ -74,3 +74,6 @@ class Account:
     def rename(self, name):
         self.db.execute("UPDATE accounts SET name = %s WHERE id = %s", [name, self.id])
         self.name = name
+
+    def change_barcode(self, barcode):
+        self.db.execute("UPDATE barcodes SET barcode = %s WHERE id = %s", [barcode, self.id])

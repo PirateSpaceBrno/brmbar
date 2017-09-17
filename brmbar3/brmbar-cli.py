@@ -32,6 +32,8 @@ Usage: brmbar-cli.py COMMAND ARGS...
 		screen of the GUI.
 	adduser USER
 		Add user (debt) account with given username.
+    edituser USER barcode NEWBARCODE
+        Edit user's barcode to newly specified
 	undo TRANSID
 		Commit a transaction that reverses all splits of a transaction with
 		a given id (to find out that id: select * from transaction_cashsums;)
@@ -185,7 +187,13 @@ elif sys.argv[1] == "stats":
 elif sys.argv[1] == "adduser":
     acct = brmbar.Account.create(db, sys.argv[2], brmbar.Currency.load(db, id = 1), 'debt')
     acct.add_barcode(sys.argv[2]) # will commit
-    print("{}: id {}".format(acct.name, acct.id));
+    print("{}: id {}".format(acct.name, acct.id))
+
+elif sys.argv[1] == "edituser":
+    acct = load_user(sys.argv[2])
+    if sys.argv[3] == "barcode":
+        acct.change_barcode(sys.argv[4])
+        print("Barcode for user {} changed to {}".format(acct.name, sys.argv[4]))
 
 elif sys.argv[1] == "undo":
     newtid = shop.undo(int(sys.argv[2]))
