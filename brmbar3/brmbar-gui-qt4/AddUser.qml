@@ -113,4 +113,23 @@ Item {
             loadPage("MainPage")
         }
 	}
+
+	
+    Component.onCompleted: {
+	if (dbid != "") {
+	    info = shop.loadAccount(dbid)
+	} else {
+	    info = { "name": "", "dbid": "" };
+	}
+	item_name_pad.enteredText = info.name
+    }
+
+    states: [
+	State {
+	    name: "normal"
+	},
+	State {
+	    name: "name_edit"
+	}
+    ]
 }
