@@ -1,0 +1,66 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{835d51e3-3368-461d-a62b-1602e46d90cd}</ProjectGuid>
+    <ProjectHome />
+    <StartupFile>brmbar-cli.py</StartupFile>
+    <SearchPath />
+    <WorkingDirectory>.</WorkingDirectory>
+    <OutputPath>.</OutputPath>
+    <ProjectTypeGuids>{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <LaunchProvider>Standard Python launcher</LaunchProvider>
+    <InterpreterId />
+    <InterpreterVersion />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)' == 'Debug'" />
+  <PropertyGroup Condition="'$(Configuration)' == 'Release'" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <PtvsTargetsFile>$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets</PtvsTargetsFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="brmbar-cli.py" />
+    <Compile Include="brmbar-gui-qt4.py" />
+    <Compile Include="brmbar-tui.py" />
+    <Compile Include="brmbar-web.py" />
+    <Compile Include="brmbar\Account.py" />
+    <Compile Include="brmbar\Currency.py" />
+    <Compile Include="brmbar\Database.py" />
+    <Compile Include="brmbar\Shop.py" />
+    <Compile Include="brmbar\__init__.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="brmbar-gui-qt4\AddUser.qml" />
+    <Content Include="brmbar-gui-qt4\BarButton.qml" />
+    <Content Include="brmbar-gui-qt4\BarClock.qml" />
+    <Content Include="brmbar-gui-qt4\BarcodeInput.qml" />
+    <Content Include="brmbar-gui-qt4\BarKeyboard.qml" />
+    <Content Include="brmbar-gui-qt4\BarKeyPad.qml" />
+    <Content Include="brmbar-gui-qt4\BarNumPad.qml" />
+    <Content Include="brmbar-gui-qt4\BarScrollBar.qml" />
+    <Content Include="brmbar-gui-qt4\BarTextHint.qml" />
+    <Content Include="brmbar-gui-qt4\BasePage.qml" />
+    <Content Include="brmbar-gui-qt4\brmbar.svg" />
+    <Content Include="brmbar-gui-qt4\brmlab.svg" />
+    <Content Include="brmbar-gui-qt4\ChargeCredit.qml" />
+    <Content Include="brmbar-gui-qt4\ItemEdit.qml" />
+    <Content Include="brmbar-gui-qt4\ItemInfo.qml" />
+    <Content Include="brmbar-gui-qt4\main.qml" />
+    <Content Include="brmbar-gui-qt4\MainPage.qml" />
+    <Content Include="brmbar-gui-qt4\Management.qml" />
+    <Content Include="brmbar-gui-qt4\Receipt.qml" />
+    <Content Include="brmbar-gui-qt4\StockMgmt.qml" />
+    <Content Include="brmbar-gui-qt4\Transfer.qml" />
+    <Content Include="brmbar-gui-qt4\UserInfo.qml" />
+    <Content Include="brmbar-gui-qt4\UserMgmt.qml" />
+    <Content Include="brmbar-gui-qt4\Withdraw.qml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="brmbar" />
+    <Folder Include="brmbar-gui-qt4" />
+  </ItemGroup>
+  <Import Project="$(PtvsTargetsFile)" Condition="Exists($(PtvsTargetsFile))" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.Common.targets" Condition="!Exists($(PtvsTargetsFile))" />
+</Project>

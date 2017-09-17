@@ -206,6 +206,14 @@ class ShopAdapter(QtCore.QObject):
             db.commit()
         return { "dbid": acct.id, "cost": (currency.str(cost) if cost != "" else "") }
 
+    @QtCore.Slot('QVariant', result='QVariant')
+    def addUser(self, invmap):
+        if (invmap["name"] == ""):
+            return None
+        acct = brmbar.Account.create(db, invmap["name"], brmbar.Currency.load(db, id = 1), 'debt')
+        
+        return { "dbid": acct.id, "name": invmap["name"] }
+
     @QtCore.Slot('QVariant', 'QVariant', 'QVariant', result='QVariant')
     def newReceipt(self, userid, description, amount):
         if (description == "" or amount == ""):

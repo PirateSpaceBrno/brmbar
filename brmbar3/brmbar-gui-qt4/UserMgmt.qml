@@ -79,6 +79,17 @@ Item {
 	}
     }
 
+	BarButton {
+    id: select_item
+    x: 65
+    y: 838
+    width: 360
+    text: "Přidat uživatele"
+    onButtonClick: {
+        loadPage("AddUser")
+    }
+    }
+
     BarButton {
         id: cancel
         x: 855
