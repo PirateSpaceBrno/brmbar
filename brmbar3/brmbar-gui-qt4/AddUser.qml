@@ -7,6 +7,8 @@ Item {
 	property string barcode: ""
     property string item_name: item_name_pad.enteredText
 
+    state: "normal"
+
     BarcodeInput {
         color: "#00ff00" /* just for debugging */
 		focus: page.state == "normal"
@@ -54,10 +56,10 @@ Item {
 			x: 790
 			y: 0
 			width: 240
-			height: 60
+            height: 60
 			fontSize: 0.768 * 46
-			text: page.state == "name_edit" ? "Přiřadit" : "Upravit"
-			onButtonClick: { if (page.state == "name_edit") page.state = "normal"; else page.state = "name_edit"; }
+            text: page.state == "name_edit" ? "Přiřadit" : "Upravit"
+            onButtonClick: { if (page.state == "name_edit") page.state = "normal"; else page.state = "name_edit"; }
 		}
 	}
 
@@ -70,6 +72,15 @@ Item {
 			Keys.onReturnPressed: { item_name_edit.buttonClick() }
 			Keys.onEscapePressed: { cancel.buttonClick() }
 	}
+
+    BarTextHint {
+    id: barcode_row
+    visible: page.state == "normal"
+        x: 65
+        y: 476
+        hint_goal: "Přidat NFC tag:"
+        hint_action: "Přilož NFC tag"
+    }
 
 
 	BarButton {
