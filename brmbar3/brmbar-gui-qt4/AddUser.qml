@@ -5,6 +5,8 @@ Item {
     anchors.fill: parent
 
 	property string barcode: ""
+	property string dbid: ""
+	property variant info: ""
     property string item_name: item_name_pad.enteredText
 
     state: "normal"
